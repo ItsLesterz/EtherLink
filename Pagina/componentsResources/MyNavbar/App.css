@@ -24,5 +24,8 @@
 }
 
 .read-the-docs {
-  color: #00a2ff;
+  color: #888;
+}
+body {
+  overflow-x: hidden;
 }

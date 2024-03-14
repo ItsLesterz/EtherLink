@@ -1,0 +1,34 @@
+@import "rsuite/dist/rsuite.css";
+
+#root {
+  padding: 10px;
+}
+
+.fixed-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.content-container {
+  padding-top: 56px; /* Adjust the value if needed to accommodate the height of your navbar */
+  padding-left: 50px; /* Adjust the value if needed to accommodate the width of your sidebar */
+}
+
+.content-container2 {
+  transition: margin-left 0.2s ease;
+}
+
+.content-container-expanded {
+  margin-left: 260px; /* Width of the expanded sidebar */
+}
