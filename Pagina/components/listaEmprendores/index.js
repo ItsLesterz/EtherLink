@@ -1,3 +1,3 @@
-import LISTAEMPRENDEDORES from "./listaEmprendedores.jsx";
+import LISTAEMPRENDEDORES from "./Emprendedores.jsx";
 
 export default LISTAEMPRENDEDORES;

@@ -9,8 +9,11 @@ import {
   Dropdown,
   IconButton,
   Progress,
+  Row,
+  Col,
 } from "rsuite";
 import MoreIcon from "@rsuite/icons/legacy/More";
+import { Navbar } from "react-bootstrap";
 //import { mockUsers } from "./mock";
 
 const { Column, HeaderCell, Cell } = Table;
@@ -18,24 +21,71 @@ const { Column, HeaderCell, Cell } = Table;
 const testData = [
   {
     id: 1,
-    avatar: "url_to_avatar_1",
-    name: "John Doe",
+    avatar:
+      "https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/Amazon-512.png",
+    name: "Amazon",
     gender: "Male",
     city: "New York",
     street: "123 Street",
     progress: 80,
     rating: 4,
-    amount: 5000,
+    amount: 35,
   },
   {
     id: 2,
-    avatar: "url_to_avatar_2",
-    name: "Jane Smith",
+    avatar:
+      "https://m.media-amazon.com/images/I/51HRxIVNCEL._AC_UF894,1000_QL80_.jpg",
+    name: "Tesla",
     gender: "Female",
     city: "Los Angeles",
     street: "456 Avenue",
     progress: 90,
-    rating: 5,
+    rating: 1,
+    amount: 1,
+  },
+  {
+    id: 3,
+    avatar:
+      "https://c0.klipartz.com/pngpicture/454/857/gratis-png-mickey-mouse-logo-de-minnie-mouse-mano-de-mickey-s.png",
+    name: "Disney",
+    gender: "Female",
+    city: "Los Angeles",
+    street: "456 Avenue",
+    progress: 90,
+    rating: 3,
+    amount: 70000,
+  },
+  {
+    id: 4,
+    avatar: "url_to_avatar_2",
+    name: "Sony",
+    gender: "Female",
+    city: "Los Angeles",
+    street: "456 Avenue",
+    progress: 90,
+    rating: 2,
+    amount: 7000,
+  },
+  {
+    id: 5,
+    avatar: "url_to_avatar_2",
+    name: "Facebook",
+    gender: "Female",
+    city: "Los Angeles",
+    street: "456 Avenue",
+    progress: 90,
+    rating: 4,
+    amount: 7000,
+  },
+  {
+    id: 6,
+    avatar: "url_to_avatar_2",
+    name: "Twitter",
+    gender: "Female",
+    city: "Los Angeles",
+    street: "456 Avenue",
+    progress: 90,
+    rating: 4,
     amount: 7000,
   },
   // Add more test data objects as needed
@@ -44,18 +94,13 @@ const data = testData;
 
 const NameCell = ({ rowData, dataKey, ...props }) => {
   const speaker = (
-    <Popover title="Description">
+    <Popover title="Descripcion">
       <p>
-        <b>Name:</b> {rowData.name}
+        <b>Nombre:</b> {rowData.name}
       </p>
+
       <p>
-        <b>Gender:</b> {rowData.gender}
-      </p>
-      <p>
-        <b>City:</b> {rowData.city}
-      </p>
-      <p>
-        <b>Street:</b> {rowData.street}
+        <b>Ciudad:</b> {rowData.city}
       </p>
     </Popover>
   );
@@ -107,11 +152,11 @@ const renderMenu = ({ onClose, left, top, className }, ref) => {
   return (
     <Popover ref={ref} className={className} style={{ left, top }} full>
       <Dropdown.Menu onSelect={handleSelect}>
-        <Dropdown.Item eventKey={1}>Follow</Dropdown.Item>
-        <Dropdown.Item eventKey={2}>Sponsor</Dropdown.Item>
-        <Dropdown.Item eventKey={3}>Add to friends</Dropdown.Item>
-        <Dropdown.Item eventKey={4}>View Profile</Dropdown.Item>
-        <Dropdown.Item eventKey={5}>Block</Dropdown.Item>
+        <Dropdown.Item eventKey={1}>Seguir</Dropdown.Item>
+        <Dropdown.Item eventKey={2}>Patrocinar</Dropdown.Item>
+        <Dropdown.Item eventKey={3}>Añadir a Amigos</Dropdown.Item>
+        <Dropdown.Item eventKey={4}>Ver Proyecto</Dropdown.Item>
+        <Dropdown.Item eventKey={5}>Bloquear</Dropdown.Item>
       </Dropdown.Menu>
     </Popover>
   );
@@ -155,7 +200,7 @@ const listaEmprendedores = () => {
   };
 
   return (
-    <Table height={300} data={data} id="table">
+    <Table height={900} data={data} id="table">
       <Column width={95} align="center">
         <HeaderCell style={{ padding: 0 }}>
           <div style={{ lineHeight: "40px" }}>
@@ -174,17 +219,17 @@ const listaEmprendedores = () => {
         />
       </Column>
       <Column width={80} align="center">
-        <HeaderCell>Avartar</HeaderCell>
+        <HeaderCell>Avatar</HeaderCell>
         <ImageCell dataKey="avartar" />
       </Column>
 
       <Column width={160}>
-        <HeaderCell>Name</HeaderCell>
+        <HeaderCell>Nombre</HeaderCell>
         <NameCell dataKey="name" />
       </Column>
 
       <Column width={230}>
-        <HeaderCell>Skill Proficiency</HeaderCell>
+        <HeaderCell>Progreso</HeaderCell>
         <Cell style={{ padding: "10px 0" }}>
           {(rowData) => (
             <Progress percent={rowData.progress} showInfo={false} />
@@ -193,7 +238,7 @@ const listaEmprendedores = () => {
       </Column>
 
       <Column width={100}>
-        <HeaderCell>Rating</HeaderCell>
+        <HeaderCell>Calficiacion</HeaderCell>
         <Cell>
           {(rowData) =>
             Array.from({ length: rowData.rating }).map((_, i) => (
@@ -204,7 +249,7 @@ const listaEmprendedores = () => {
       </Column>
 
       <Column width={100}>
-        <HeaderCell>Income</HeaderCell>
+        <HeaderCell>Ingreso</HeaderCell>
         <Cell>{(rowData) => `$${rowData.amount}`}</Cell>
       </Column>
 

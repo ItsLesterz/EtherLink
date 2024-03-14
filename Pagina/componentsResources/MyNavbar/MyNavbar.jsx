@@ -135,8 +135,9 @@ const MyNavbar = ({ children }) => {
                   />
                 </Navbar.Brand>
 
-                <Nav.Item href="/news">News</Nav.Item>
-                <Nav.Item href="/categories">Categories</Nav.Item>
+                <Nav.Item href="/news">Novedades</Nav.Item>
+                <Nav.Item href="/categories">Categorias</Nav.Item>
+                <Nav.Item href="/contact">Contactanos</Nav.Item>
 
                 <Nav.Item>
                   <div alignItems="center" style={{ alignItems: "center" }}>

@@ -21,7 +21,7 @@
 }
 
 .content-container {
-  padding-top: 56px; /* Adjust the value if needed to accommodate the height of your navbar */
+  padding-top: 40px; /* Adjust the value if needed to accommodate the height of your navbar */
   padding-left: 50px; /* Adjust the value if needed to accommodate the width of your sidebar */
 }
 
