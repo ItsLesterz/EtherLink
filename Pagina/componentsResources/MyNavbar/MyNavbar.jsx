@@ -166,7 +166,7 @@ const MyNavbar = ({ children }) => {
                   }}
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
                   alt="@superman66"
-                  href="/myprofile"
+                  href="/profile"
                 />
               </Nav>
               <Nav pullRight>
@@ -177,7 +177,7 @@ const MyNavbar = ({ children }) => {
                 <Nav.Menu
                   eventKey="5"
                   trigger="hover"
-                  title="My Wallert"
+                  title="My Wallet"
                   icon={<SortDownIcon />}
                   placement="bottom"
                   style={{
@@ -251,7 +251,7 @@ const MyNavbar = ({ children }) => {
                       style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
                       active
                       icon={<MemberIcon />}
-                      href="/myprofile">
+                      href="/profile">
                       Mi Perfil
                     </Nav.Item>
                     <Nav.Item

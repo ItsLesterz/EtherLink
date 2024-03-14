@@ -1,0 +1,47 @@
+@import "rsuite/dist/rsuite.css";
+
+#root {
+  padding: 10px;
+}
+
+.card-transparent-border {
+  margin-top: 40px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.55) !important;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.textarea-input {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  color: white; /* White text color */
+  overflow-y: auto; /* Add a vertical scrollbar when content overflows */
+}
+.text-input {
+  width: 97%;
+  height: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  color: white; /* White text color */
+  /* Add a vertical scrollbar when content overflows */
+}
+
+.textpacific {
+  font-family: Pacifico, cursive;
+  text-align: center;
+  font-size: 58px;
+  color: rgb(0, 221, 255);
+  background-color: rgba(84, 84, 84, 0);
+  text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+}

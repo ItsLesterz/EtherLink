@@ -1,0 +1,224 @@
+@import "rsuite/dist/rsuite.css";
+
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  margin: 20px;
+background-color: rgba(
+  0,
+  0,
+  0,
+  0.7
+); ;
+border: 0;
+border-radius: 0;
+}
+
+.bubble {
+  width: 700px;
+  height: 700px;
+  background-color: #ffffff18; /* White bubble color */
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Make sure the bubble doesn't interfere with mouse events on the card */
+}
+
+.nav-item {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* This sets the background color to a slight black color with 10% opacity */
+  /* Add any other styles for the Nav items here */
+}
+/* Desktop styles .header-image {
+  max-width: 100%;
+  height: auto;
+} */
+
+.header-image {
+  width: 90vw; /* 100% of viewport width */
+  height: 200px; /* Set the desired height in pixels or percentage */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  overflow: hidden; /* Hide any overflow */
+}
+.circular-image {
+  width: 150px; /* Adjust the size of the circular image as needed */
+  height: 150px; /* Adjust the size of the circular image as needed */
+  border-radius: 50%;
+  margin: 20px;
+}
+
+
+
+.small-card-body {
+  max-width: 300px; /* Adjust the value as per your desired width */
+  margin: auto;
+}
+
+
+.App {
+  padding: 10px;
+  
+}
+
+.image-container {
+  break-inside: avoid; /* Prevent the image from breaking across columns */
+  border-radius: 20px; /* Adjust the value to control the amount of curvature */
+  margin-bottom: 1em;
+  overflow: hidden; /* Ensure that the content inside respects the circular border */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+}
+
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 2;
+  right: 0;
+  left: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  opacity: 0;
+  z-index: 2;
+}
+
+.custom-overlay__caption {
+  background-color: rgba(0, 0, 0, 0.8);
+  max-height: 240px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  padding: 2px;
+  font-size: 90%;
+}
+
+
+.upperoverlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap'); */
+
+.btn{
+
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #fff;
+background: linear-gradient(90deg, #0087b0 32%, #48cae4 100%);
+padding: 10px 31px;
+border: none;
+box-shadow: none;
+border-radius: 50px 20px 50px 24px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+}
+
+.btn:hover{
+
+transition : 1000ms;
+padding: 10px 49px;
+transform : translateY(-0px);
+background: linear-gradient(90deg, #0087b0 32%, #48cae4 100%);
+color: #ffffff;
+border: solid 2px #ffffff;
+}
+
+
+.btn2{
+
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(90deg, #6d00b0 32%, #48cae4 100%);
+    padding: 10px 31px;
+    border: none;
+    box-shadow: none;
+    border-radius: 50px 20px 50px 24px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    }
+    
+    .btn2:hover{
+    
+    transition : 1000ms;
+    padding: 10px 49px;
+    transform : translateY(-0px);
+    background: linear-gradient(90deg, #6d00b0 32%, #48cae4 100%);
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    }
+    
+
+    
+.btn3{
+
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(90deg, #00b02c
+    32%, #48cae4 100%);
+    padding: 10px 31px;
+    border: none;
+    box-shadow: none;
+    border-radius: 50px 20px 50px 24px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    }
+    
+    .btn3:hover{
+    
+    transition : 1000ms;
+    padding: 10px 49px;
+    transform : translateY(-0px);
+    background: linear-gradient(90deg, #00b02c
+    32%, #48cae4 100%);
+    color: #ffffff;
+    border: solid 2px #ffffff;
+    }
