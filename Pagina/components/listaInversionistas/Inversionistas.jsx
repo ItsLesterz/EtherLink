@@ -1,8 +1,9 @@
-import LISTAEMPRENDEDORES from "./listaEmprendedores.jsx";
+import LISTAINVERSIONISTAS from "./listaInversionistas.jsx";
 import MYNAVBAR from "../../componentsResources/MyNavbar/index.js";
-import { useState } from "react";
+import "./styles.css";
 import { Row, Col } from "rsuite";
-function Emprendedores() {
+import { useState } from "react";
+function INVERSIONISTAS() {
   const [showButton, setShowButton] = useState(true);
 
   const handleMouseMove = () => {
@@ -12,6 +13,7 @@ function Emprendedores() {
   const handleMouseLeave = () => {
     setShowButton(true);
   };
+
   return (
     <MYNAVBAR>
       {" "}
@@ -32,7 +34,7 @@ function Emprendedores() {
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}>
               <img
-                src="https://www.bim.mx/wp-content/uploads/2023/09/tipos-de-inversionistas-scaled.webp"
+                src="https://foroalfa.org/imagenes/ilustraciones/3652.jpg"
                 className="card-image"
                 style={{
                   width: "100%",
@@ -47,7 +49,7 @@ function Emprendedores() {
           </Col>{" "}
           <Col xs={12}>
             {" "}
-            <LISTAEMPRENDEDORES />
+            <LISTAINVERSIONISTAS />
           </Col>
         </Row>
       </div>
@@ -55,4 +57,4 @@ function Emprendedores() {
   );
 }
 
-export default Emprendedores;
+export default INVERSIONISTAS;

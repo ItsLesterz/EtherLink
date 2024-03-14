@@ -157,6 +157,39 @@ const MyNavbar = ({ children }) => {
                   </div>
                 </Nav.Item>
               </Nav>
+
+              <Nav pullRight>
+                <Avatar
+                  style={{
+                    marginTop: "10px",
+                    marginRight: "10px",
+                  }}
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                  alt="@superman66"
+                  href="/myprofile"
+                />
+              </Nav>
+              <Nav pullRight>
+                {" "}
+                <Nav.Item>Elon </Nav.Item>
+              </Nav>
+              <Nav pullRight>
+                <Nav.Menu
+                  eventKey="5"
+                  trigger="hover"
+                  title="My Wallert"
+                  icon={<SortDownIcon />}
+                  placement="bottom"
+                  style={{
+                    background: "rgba(0,150,255,255)",
+                    color: "black",
+                  }}>
+                  <Nav.Item style={{ color: "black" }} href="/" eventKey="4-1">
+                    U324677654645kjhgsrgzeyayze5emau
+                  </Nav.Item>
+                </Nav.Menu>
+              </Nav>
+
               {/* {user ? (
                   <Nav pullRight>
                     <Avatar

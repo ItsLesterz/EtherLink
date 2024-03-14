@@ -1,3 +1,3 @@
-import LISTAINVERSIONISTAS from "./listaInversionistas.jsx";
+import INVERSIONISTAS from "./Inversionistas.jsx";
 
-export default LISTAINVERSIONISTAS;
+export default INVERSIONISTAS;
