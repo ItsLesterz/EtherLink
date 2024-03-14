@@ -142,7 +142,7 @@ const MyNavbar = ({ children }) => {
                   <div alignItems="center" style={{ alignItems: "center" }}>
                     {" "}
                     {/* SEARCH BAR */}
-                    <InputGroup inside style={stylesSearchBar}>
+                    {/* <InputGroup inside style={stylesSearchBar}>
                       <Input
                         value={searchText}
                         onChange={(e) => setSearchText(e)}
@@ -151,7 +151,7 @@ const MyNavbar = ({ children }) => {
                       <InputGroup.Button onClick={handleSearch}>
                         <SearchIcon />
                       </InputGroup.Button>
-                    </InputGroup>
+                    </InputGroup> */}
                     {/* SEARCH BAR */}
                   </div>
                 </Nav.Item>
@@ -218,21 +218,21 @@ const MyNavbar = ({ children }) => {
                       active
                       icon={<MemberIcon />}
                       href="/myprofile">
-                      My Profile
+                      Mi Perfil
                     </Nav.Item>
                     <Nav.Item
                       eventKey="2"
                       style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
                       icon={<GroupIcon />}
                       href="/following">
-                      Follows
+                      Seguidos
                     </Nav.Item>
                     <Nav.Item
                       eventKey="2"
                       style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
                       icon={<WechatTemplateIcon />}
                       href="/subscription">
-                      Commissions
+                      Subscripciones
                     </Nav.Item>
                     <Nav.Item
                       eventKey="2"
@@ -249,7 +249,41 @@ const MyNavbar = ({ children }) => {
                       Discord Servers
                     </Nav.Item>
 
-                    <Nav.Menu
+                    {/* ------------------------- */}
+                  </Nav>
+                </Sidenav.Body>
+              </Sidenav>
+
+              <div style={{ marginTop: "auto", marginBottom: "65px" }}>
+                <NavToggle
+                  expand={expand}
+                  onChange={() => setExpand(!expand)}
+                />
+              </div>
+            </Sidebar>
+          ) : null}
+        </div>
+
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1, // Adjust this value as needed
+          }}>
+          <Container className={`${!isMobile ? "content-container" : ""}`}>
+            <Content style={{ width: "96vw", overflowX: "hidden" }}>
+              {children}
+            </Content>
+          </Container>
+        </div>
+      </Container>
+    </div>
+  );
+};
+
+export default MyNavbar;
+
+/*
+  <Nav.Menu
                       eventKey="4"
                       trigger="hover"
                       title="Upload"
@@ -263,7 +297,7 @@ const MyNavbar = ({ children }) => {
                         Art
                       </Nav.Item>
                     </Nav.Menu>
-                    {/* ------------------------- */}
+                    {/* ------------------------
                     <Nav.Menu
                       eventKey="5"
                       trigger="hover"
@@ -350,35 +384,5 @@ const MyNavbar = ({ children }) => {
                       </Nav.Item>
                     </Nav.Menu>
 
-                    {/* ------------------------- */}
-                  </Nav>
-                </Sidenav.Body>
-              </Sidenav>
 
-              <div style={{ marginTop: "auto", marginBottom: "65px" }}>
-                <NavToggle
-                  expand={expand}
-                  onChange={() => setExpand(!expand)}
-                />
-              </div>
-            </Sidebar>
-          ) : null}
-        </div>
-
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1, // Adjust this value as needed
-          }}>
-          <Container className={`${!isMobile ? "content-container" : ""}`}>
-            <Content style={{ width: "100vw", overflowX: "hidden" }}>
-              {children}
-            </Content>
-          </Container>
-        </div>
-      </Container>
-    </div>
-  );
-};
-
-export default MyNavbar;
+*/

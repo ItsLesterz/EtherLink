@@ -23,6 +23,7 @@ import {
 
 import HOME from "../components/home/index.js";
 import LISTAEMPRENDEDORES from "../components/listaEmprendores/index.js";
+import FRONTPAGE from "../components/frontPage/index.js";
 function App() {
   return (
     <Container>
@@ -31,6 +32,7 @@ function App() {
           <Routes>
             <Route path="/home" element={<HOME />} />
             <Route path="/" element={<LISTAEMPRENDEDORES />} />
+            <Route path="/frontPage" element={<FRONTPAGE />} />
           </Routes>
         </Router>
       </Content>
