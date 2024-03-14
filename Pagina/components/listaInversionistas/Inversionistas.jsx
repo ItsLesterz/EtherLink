@@ -1,38 +1,43 @@
 import LISTAINVERSIONISTAS from "./listaInversionistas.jsx";
 import MYNAVBAR from "../../componentsResources/MyNavbar/index.js";
 import "./styles.css";
-import { Row, Col } from "rsuite";
+import { Row, Col, Input } from "rsuite"; // Importa el componente Input de rsuite
 import { useState } from "react";
+
 function INVERSIONISTAS() {
-  const [showButton, setShowButton] = useState(true);
+  const [searchValue, setSearchValue] = useState(""); // Estado para almacenar el valor de búsqueda
 
-  const handleMouseMove = () => {
-    setShowButton(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowButton(true);
+  const handleSearchChange = (value) => {
+    setSearchValue(value); // Actualiza el estado del valor de búsqueda
   };
 
   return (
     <MYNAVBAR>
-      {" "}
       <div>
         <Row>
+          <Col xs={24} style={{ marginBottom: 10 }}> {/* Ajusta el espacio entre la barra de búsqueda y la tabla */}
+            {/* Barra de búsqueda */}
+            <Input style={{ marginLeft:"50%", marginTop:12}}
+              placeholder="Buscar..."
+              value={searchValue}
+              onChange={handleSearchChange}
+            />
+          </Col>
+        </Row>
+        <Row>
           <Col xs={12}>
-            {" "}
             <div
               className="card-container"
               style={{
                 width: "auto",
                 height: "auto",
-                borderRadius: "20px", // Adjust the border radius as needed
+                borderRadius: "20px",
                 overflow: "hidden",
                 position: "relative",
-                boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Optional: Add a shadow for depth
+                boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
               }}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}>
+            >
+              {/* Contenido de la tarjeta */}
               <img
                 src="https://foroalfa.org/imagenes/ilustraciones/3652.jpg"
                 className="card-image"
@@ -44,12 +49,11 @@ function INVERSIONISTAS() {
                 }}
                 alt="Your Image"
               />
-              faeafwfaef
             </div>
-          </Col>{" "}
+          </Col>
           <Col xs={12}>
-            {" "}
-            <LISTAINVERSIONISTAS />
+            {/* Lista de inversionistas */}
+            <LISTAINVERSIONISTAS searchValue={searchValue} /> {/* Pasa el valor de búsqueda como prop a la lista de inversionistas */}
           </Col>
         </Row>
       </div>
