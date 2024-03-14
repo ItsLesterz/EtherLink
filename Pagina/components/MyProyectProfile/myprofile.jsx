@@ -27,56 +27,25 @@ function MYPROFILE() {
   const [isFollowing, setIsFollowing] = useState(false);
   const [galleryView, setgalleryView] = useState(null);
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose1 = () => setShowModal(false);
+  const handleShow = () => (
+   // window.location.href = '/business',
+    setShowModal(true)
+  );
+ 
+  
   const [open, setOpen] = React.useState(false);
   // const images = [];
 
   const [roleD, setRoleD] = useState(null);
 
-  function handleFollowUnfollow() {
-    setIsFollowing(!isFollowing);
-  }
-  // useEffect(() => {
-  //   console.log("MyGallerViewer - View Prop:", galleryView);
-  // }, [galleryView]);
-
-  // useEffect(() => {
-  //   const fetchRoleData = async () => {
-  //     const response = await getRoleData(user.role);
-  //     setRoleD(response);
-  //   };
-
-  //   fetchRoleData();
-  // }, [user.role]);
-
-  // for (let i = 0; i < RecentImages_Array.length; i++) {
-  //   images.push({
-  //     src: RecentImages_Array[i].imageurl,
-  //     caption: RecentImages_Array[i].title,
-  //     customOverlay: (
-  //       <div className="custom-overlay__caption">
-  //         <div>
-  //           {RecentImages_Array[i].title} -{" "}
-  //           {RecentImages_Array[i].username_author}
-  //         </div>
-  //       </div>
-  //     ),
-  //   });
-  // }
   const [bubblePosition, setBubblePosition] = useState({ x: 0, y: 0 });
 
-  // const handleMouseMove = (e) => {
-  //   setBubblePosition({ x: e.clientX, y: e.clientY });
-  // };
+  const handleOpen = (value) => 
+  {
 
-  // useEffect(() => {
-  //   document.addEventListener("mousemove", handleMouseMove);
-
-  //   return () => {
-  //     document.removeEventListener("mousemove", handleMouseMove);
-  //   };
-  // }, []);
-
-  const handleOpen = (value) => {
     setOpen(true);
   };
 
@@ -93,16 +62,6 @@ function MYPROFILE() {
     getRecent();
   }, []);
 
-  // const avatarStyle = {
-  //   border: "2px solid #fff", // Borde blanco alrededor del avatar
-  //   marginRight: "15px", // Margen a la derecha del avatar
-  //   width: "60px", // Ancho del avatar
-  //   height: "60px", // Altura del avatar
-  // };
-  // const handleEditProfile = () => {
-  //   // Implement your edit profile logic here
-  //   console.log("Edit profile clicked");
-  // };
 
   const handleCopyDirection = () => {
     //TODO: add env here
@@ -121,6 +80,22 @@ function MYPROFILE() {
 
   return (
     <MYNAVBAR>
+      <Modal show={showModal} onHide={handleClose1}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal Title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Contenido del modal
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose1}>
+            Cerrar
+          </Button>
+          <Button variant="primary" onClick={handleClose1}>
+            Guardar Cambios
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div
         style={{
           width: "95vw",
@@ -133,10 +108,22 @@ function MYPROFILE() {
           appearance="inverse"
           theme="dark">
           <Modal.Header>
-            <Modal.Title>Profile Settings</Modal.Title>
+            <Modal.Title>Información general</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* <UPLOADMODULE handleClose={handleClose} /> */}
+
+            <form>
+              <label>Username:</label>
+              <input type="text" />
+              <br />
+              <label>Email:</label>
+              <input type="email" />
+              <br />
+              <label>Password:</label>
+              <input type="password" />
+              <br />
+              <button type="submit">Save Changes</button>
+            </form>
           </Modal.Body>
           <Modal.Footer></Modal.Footer>
         </Modal>{" "}
@@ -238,30 +225,7 @@ function MYPROFILE() {
               }}>
               <GearIcon />
             </Button>
-            <Button
-              onClick={handleFollowUnfollow}
-              style={{
-                background: isFollowing
-                  ? "transparent" // Gradient from purple to pink when following
-                  : "linear-gradient(to right, #800080, #4B0082)", // Gradient from purple to dark purple when not following
-                color: isFollowing ? "#FF69B4" : "white", // Pink text color when following, white when not following
-                border: isFollowing ? "1px solid #FF69B4" : "none", // Pink border when following, no border when not following
-                padding: "5px 10px", // Adjust the padding as needed
-                width: isMobile ? "40px" : "140px", // Set a fixed width
-                height: "40px", // Set a fixed height
-              }}>
-              {isMobile ? (
-                isFollowing ? (
-                  <UnvisibleIcon />
-                ) : (
-                  <VisibleIcon />
-                )
-              ) : isFollowing ? (
-                "Darse de Baja"
-              ) : (
-                "Patrocinar"
-              )}
-            </Button>
+          
           </Card>
         </Row>
         <Row></Row>
@@ -285,7 +249,9 @@ function MYPROFILE() {
           </ButtonToolbar>{" "}
           {/* <MyGallerViewer id={user._id} view={galleryView} /> */}
         </Row>
+        
       </div>
+      
     </MYNAVBAR>
   );
 }
