@@ -1,5 +1,5 @@
 import { Col, Row, Card } from "react-bootstrap";
-
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import MYNAVBAR from "../../componentsResources/MyNavbar/index.js";
 
@@ -31,6 +31,7 @@ const handleMouseLeave = () => {
 import "./styles.css";
 import { isMobile } from "react-device-detect";
 function MYPROFILE() {
+  const navigate = useNavigate();
   const [RecentImages_Array, setRecentImages_Array] = useState([]);
 
   const [galleryView, setgalleryView] = useState(null);
@@ -314,7 +315,7 @@ function MYPROFILE() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}>
                   <img
-                    src="https://www.bim.mx/wp-content/uploads/2023/09/tipos-de-inversionistas-scaled.webp"
+                    src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iM742Un6PHRI/v0/-1x-1.jpg"
                     className="card-image"
                     style={{
                       width: "100%",

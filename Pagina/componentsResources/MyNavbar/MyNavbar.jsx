@@ -167,11 +167,12 @@ const MyNavbar = ({ children }) => {
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
                   alt="@superman66"
                   href="/profile"
+                  onClick={() => Navigate("/profile")}
                 />
               </Nav>
               <Nav pullRight>
                 {" "}
-                <Nav.Item>Elon </Nav.Item>
+                <Nav.Item href="/profile">Elon </Nav.Item>
               </Nav>
               <Nav pullRight>
                 <Nav.Menu

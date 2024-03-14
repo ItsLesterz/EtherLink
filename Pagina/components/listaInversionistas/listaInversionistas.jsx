@@ -103,12 +103,23 @@ const NameCell = ({ rowData, dataKey, ...props }) => {
       <p>
         <b>Ciudad:</b> {rowData.city}
       </p>
+
+      <Link to="/otra-pagina">
+        {" "}
+        {/* Aquí especifica la ruta de la otra página */}
+        <button>Ver</button>
+      </Link>
     </Popover>
   );
 
   return (
     <Cell {...props}>
-      <Whisper placement="top" speaker={speaker}>
+      <Whisper
+        placement="top"
+        trigger="hover"
+        controlId="control-id-hover-enterable"
+        speaker={speaker}
+        enterable>
         <a>{rowData[dataKey]}</a>
       </Whisper>
     </Cell>

@@ -37,6 +37,9 @@ import MYPROFILE from "../components/MyProfile/index.js";
 import MYPROYECTPROFILE from "../components/MyProyectProfile/index.js";
 
 import BusinessCanvas from "../components/businessCanva/businessCanva.jsx";
+
+import LOGIN from "../components/LoginA/index.js";
+
 function App() {
   return (
     <Container>
@@ -53,6 +56,8 @@ function App() {
             <Route path="/profile/tesla" element={<OTHERSPROFILE />} />
             <Route path="/profile" element={<MYPROFILE />} />
             <Route path="/proyect" element={<MYPROYECTPROFILE />} />
+            <Route path="/BCanvas" element={<BusinessCanvas />} />
+            <Route path="/login" element={<LOGIN />} />
           </Routes>
         </Router>
       </Content>
