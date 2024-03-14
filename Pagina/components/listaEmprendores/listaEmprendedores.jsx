@@ -1,5 +1,8 @@
 import React from "react";
 import MYNAVBAR from "../../componentsResources/MyNavbar";
+import Web3 from 'web3';
+import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
+import { BrowserProvider } from "ethers";
 
 import {
   Table,
@@ -17,6 +20,36 @@ import { Navbar } from "react-bootstrap";
 //import { mockUsers } from "./mock";
 
 const { Column, HeaderCell, Cell } = Table;
+
+async function handleMakeAtesstation(account) {
+  const eas = new EAS('0xaEF4103A04090071165F78D45D83A0C0782c2B2a');
+  const provider = new BrowserProvider(window.ethereum);
+
+  const signer = await provider.getSigner()
+  eas.connect(signer);
+
+  const schemaEncoder = new SchemaEncoder("address account,uint256 amount");
+  const encodedData = schemaEncoder.encodeData([
+    { name: "account", value: "0xDdeD5edf71d9e43927123638503Af53a3A22dE2f", type: "address" },
+    { name: "amount", value: '0', type: "uint256" },
+  ]);
+
+  const schemaUID = "0x4b802b21367c217ea7a42fbb9045025d4a71f250f3af3eda37ca43eeb4f7ee6f";
+
+  const tx = await eas.attest({
+    schema: schemaUID,
+    data: {
+      recipient: "0xDdeD5edf71d9e43927123638503Af53a3A22dE2f",
+      expirationTime: 0,
+      revocable: true,
+      data: encodedData,
+    },
+  });
+
+  const newAttestationUID = await tx.wait();
+
+  console.log("New attestation UID:", newAttestationUID);
+}
 
 const testData = [
   {
@@ -146,8 +179,12 @@ const CheckCell = ({ rowData, onChange, checkedKeys, dataKey, ...props }) => (
 
 const renderMenu = ({ onClose, left, top, className }, ref) => {
   const handleSelect = (eventKey) => {
+    if (eventKey === 2) {
+      handleMakeAtesstation('0xDdeD5edf71d9e43927123638503Af53a3A22dE2f');
+    }
     onClose();
     console.log(eventKey);
+    
   };
   return (
     <Popover ref={ref} className={className} style={{ left, top }} full>
