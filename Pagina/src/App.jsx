@@ -31,6 +31,9 @@ import ACTUALEMPRENDEDOR from "../components/actualEmprendedor/index.js";
 import LISTAINVERSIONISTAS from "../components/listaInversionistas/index.js";
 import ACTUALINVERSIONISTA from "../components/actualInversionista/index.js";
 
+import OTHERSPROFILE from "../components/OthersProfile/index.js";
+import MYPROFILE from "../components/MyProfile/index.js";
+
 function App() {
   return (
     <Container>
@@ -44,6 +47,8 @@ function App() {
             <Route path="/inversionistas" element={<LISTAINVERSIONISTAS />} />
 
             <Route path="/emprendedores" element={<LISTAEMPRENDEDORES />} />
+            <Route path="/profile/tesla" element={<OTHERSPROFILE />} />
+            <Route path="/profile" element={<MYPROFILE />} />
           </Routes>
         </Router>
       </Content>

@@ -1,0 +1,41 @@
+@import "rsuite/dist/rsuite.css";
+
+
+.bubble {
+  width: 700px;
+  height: 700px;
+  background-color: #ffffff18; /* White bubble color */
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Make sure the bubble doesn't interfere with mouse events on the card */
+}
+
+.nav-item {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* This sets the background color to a slight black color with 10% opacity */
+  /* Add any other styles for the Nav items here */
+}
+/* Desktop styles .header-image {
+  max-width: 100%;
+  height: auto;
+} */
+
+.header-image {
+  width: 90vw; /* 100% of viewport width */
+  height: 200px; /* Set the desired height in pixels or percentage */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  overflow: hidden; /* Hide any overflow */
+}
+.circular-image {
+  width: 150px; /* Adjust the size of the circular image as needed */
+  height: 150px; /* Adjust the size of the circular image as needed */
+  border-radius: 50%;
+  margin: 20px;
+}
+
+
