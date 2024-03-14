@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import { Col, Button, Row, Card, Form, Carousel } from "react-bootstrap";
 import { Message, AvatarGroup, Avatar } from "rsuite";
+import Web3 from 'web3';
+
 
 import "./App.css";
 import { isMobile } from "react-device-detect";
@@ -106,6 +108,32 @@ const MyNavbar = ({ children }) => {
     }
   };
 
+  const handleConnectWallet = () => {
+
+    const web3 = new Web3(window.ethereum);
+
+    if (typeof window.ethereum !== 'undefined') {
+
+      window.ethereum.enable().then(function(accounts) {
+          console.log("MetaMask enabled!");
+      }).catch(function(error) {
+          console.error("Error enabling MetaMask:", error);
+      });
+    } else {
+      console.error("MetaMask no está instalado.");
+    }
+
+    if (window.ethereum) {
+      web3.eth.getAccounts().then(function(accounts) {
+          console.log("Accounts:", accounts);
+      }).catch(function(error) {
+          console.error("Error getting accounts:", error);
+      });
+    } else {
+        console.error("MetaMask is not installed.");
+    }
+  }
+
   const stylesSearchBar = {
     width: "30vw",
     marginBottom: 10,
@@ -185,7 +213,7 @@ const MyNavbar = ({ children }) => {
                     background: "rgba(0,150,255,255)",
                     color: "black",
                   }}>
-                  <Nav.Item style={{ color: "black" }} href="/" eventKey="4-1">
+                  <Nav.Item onClick={handleConnectWallet} style={{ color: "black" }} href="/" eventKey="4-1">
                     U324677654645kjhgsrgzeyayze5emau
                   </Nav.Item>
                 </Nav.Menu>
