@@ -22,7 +22,7 @@ import {
 } from "rsuite";
 
 import HOME from "../components/home/index.js";
-
+import LISTAEMPRENDEDORES from "../components/listaEmprendores/index.js";
 function App() {
   return (
     <Container>
@@ -30,6 +30,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/home" element={<HOME />} />
+            <Route path="/" element={<LISTAEMPRENDEDORES />} />
           </Routes>
         </Router>
       </Content>

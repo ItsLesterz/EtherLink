@@ -371,7 +371,7 @@ const MyNavbar = ({ children }) => {
             zIndex: 1, // Adjust this value as needed
           }}>
           <Container className={`${!isMobile ? "content-container" : ""}`}>
-            <Content style={{ maxWidth: "100%", overflowX: "hidden" }}>
+            <Content style={{ width: "100vw", overflowX: "hidden" }}>
               {children}
             </Content>
           </Container>
