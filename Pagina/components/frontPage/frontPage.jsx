@@ -4,10 +4,10 @@ import "./styles.css"; // Agrega un archivo FrontPage.css para manejar los estil
 import { useState } from "react";
 import MYNAVBAR from "../../componentsResources/MyNavbar/index";
 import { Col, Row, Panel, Placeholder } from "rsuite";
-
+import { useNavigate } from "react-router-dom";
 function FrontPage() {
   const [showButton, setShowButton] = useState(true);
-
+  const navigate = useNavigate();
   const handleMouseMove = () => {
     setShowButton(true);
   };
@@ -52,7 +52,9 @@ function FrontPage() {
             justifyContent: "center", // Center horizontally
             paddingTop: "50px",
           }}>
-          <button class="btn">Conocer Mas</button>
+          <button class="btn" onClick={() => navigate("/contact")}>
+            Conocer Mas
+          </button>
         </div>
       </div>
       <div
@@ -97,7 +99,8 @@ function FrontPage() {
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     padding: "10px 20px",
-                  }}>
+                  }}
+                  onClick={() => navigate("/inversionistas")}>
                   Soy Inversionista
                 </button>
               )}
@@ -137,7 +140,8 @@ function FrontPage() {
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     padding: "10px 20px",
-                  }}>
+                  }}
+                  onClick={() => navigate("/emprendedores")}>
                   Soy Emprendedor
                 </button>
               )}

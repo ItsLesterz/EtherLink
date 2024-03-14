@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import MYNAVBAR from "../../componentsResources/MyNavbar/index.js";
 
 import { Tag } from "rsuite";
-import RsuiteCol from "rsuite/Col";
-import RsuiteRow from "rsuite/Row";
+
 import AttachmentIcon from "@rsuite/icons/Attachment";
 import GearIcon from "@rsuite/icons/Gear";
 import {
@@ -20,25 +19,22 @@ import {
 const RadioLabel = ({ children }) => (
   <label style={{ padding: 7 }}>{children}</label>
 );
-const handleMouseMove = () => {
-  setShowButton(true);
-};
-
-const handleMouseLeave = () => {
-  setShowButton(true);
-};
 
 import "./styles.css";
 import { isMobile } from "react-device-detect";
 function MYPROFILE() {
   const [RecentImages_Array, setRecentImages_Array] = useState([]);
-
+  const [isFollowing, setIsFollowing] = useState(false);
   const [galleryView, setgalleryView] = useState(null);
 
   const [open, setOpen] = React.useState(false);
   // const images = [];
 
   const [roleD, setRoleD] = useState(null);
+
+  function handleFollowUnfollow() {
+    setIsFollowing(!isFollowing);
+  }
   // useEffect(() => {
   //   console.log("MyGallerViewer - View Prop:", galleryView);
   // }, [galleryView]);
@@ -156,7 +152,7 @@ function MYPROFILE() {
             alignItems: "center",
           }}>
           <img
-            src="https://cnnespanol.cnn.com/wp-content/uploads/2022/10/elon-musk-twitter.jpg?quality=100&strip=info"
+            src="https://digitalassets-secure.tesla.com/image/upload/v1693294899/x7csihvqypp5akblgxuw.jpg"
             alt="Banner"
             style={{
               width: "96%",
@@ -195,7 +191,7 @@ function MYPROFILE() {
               }}></div>
             <Card.Img
               variant="top"
-              src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1229892983-square.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbTOcvfe7VQs6cRg4rw3qDu5AtmMl5584Izwwa8Fr8-A&s"
               style={{
                 width: "100px",
                 height: "100px",
@@ -205,9 +201,9 @@ function MYPROFILE() {
             />
             <Card.Body style={{ marginLeft: "30vw", zIndex: 1 }}>
               <Card.Title>
-                Elon Musk
-                <Tag color="blue" size="sm">
-                  Inversionista
+                Tesla
+                <Tag style={{ marginLeft: "3" }} color="red" size="sm">
+                  Emprendimiento
                 </Tag>
               </Card.Title>
               <Card.Text>
@@ -225,7 +221,7 @@ function MYPROFILE() {
                 border: "none", // Optional: remove button border
                 padding: isMobile ? "5px 10px" : "20px 30px", // Adjust the padding to make the button bigger
                 height: "40px",
-                marginLeft: "30vw",
+                marginLeft: "25vw",
               }}>
               <AttachmentIcon />
             </Button>
@@ -241,6 +237,30 @@ function MYPROFILE() {
                 height: "40px",
               }}>
               <GearIcon />
+            </Button>
+            <Button
+              onClick={handleFollowUnfollow}
+              style={{
+                background: isFollowing
+                  ? "transparent" // Gradient from purple to pink when following
+                  : "linear-gradient(to right, #800080, #4B0082)", // Gradient from purple to dark purple when not following
+                color: isFollowing ? "#FF69B4" : "white", // Pink text color when following, white when not following
+                border: isFollowing ? "1px solid #FF69B4" : "none", // Pink border when following, no border when not following
+                padding: "5px 10px", // Adjust the padding as needed
+                width: isMobile ? "40px" : "140px", // Set a fixed width
+                height: "40px", // Set a fixed height
+              }}>
+              {isMobile ? (
+                isFollowing ? (
+                  <UnvisibleIcon />
+                ) : (
+                  <VisibleIcon />
+                )
+              ) : isFollowing ? (
+                "Darse de Baja"
+              ) : (
+                "Patrocinar"
+              )}
             </Button>
           </Card>
         </Row>
@@ -264,97 +284,6 @@ function MYPROFILE() {
             </Button>
           </ButtonToolbar>{" "}
           {/* <MyGallerViewer id={user._id} view={galleryView} /> */}
-          <div
-            style={{
-              textAlign: "center",
-              paddingLeft: "250px",
-              paddingRight: "250px",
-              paddingTop: "50px",
-            }}>
-            <RsuiteRow>
-              <RsuiteCol xs={8}>
-                {" "}
-                <div
-                  className="card-container"
-                  style={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: "20px", // Adjust the border radius as needed
-                    overflow: "hidden",
-                    position: "relative",
-                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Optional: Add a shadow for depth
-                  }}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}>
-                  <img
-                    src="https://foroalfa.org/imagenes/ilustraciones/3652.jpg"
-                    className="card-image"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      opacity: "0.8",
-                      transition: "opacity 0.3s ease",
-                    }}
-                    alt="Your Image"
-                  />
-                </div>
-              </RsuiteCol>
-              <RsuiteCol xs={8}>
-                {" "}
-                <div
-                  className="card-container"
-                  style={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: "20px", // Adjust the border radius as needed
-                    overflow: "hidden",
-                    position: "relative",
-                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Optional: Add a shadow for depth
-                  }}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}>
-                  <img
-                    src="https://www.bim.mx/wp-content/uploads/2023/09/tipos-de-inversionistas-scaled.webp"
-                    className="card-image"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      opacity: "0.8",
-                      transition: "opacity 0.3s ease",
-                    }}
-                    alt="Your Image"
-                  />
-                </div>
-              </RsuiteCol>
-              <RsuiteCol xs={8}>
-                {" "}
-                <div
-                  className="card-container"
-                  style={{
-                    width: "auto",
-                    height: "auto",
-                    borderRadius: "20px", // Adjust the border radius as needed
-                    overflow: "hidden",
-                    position: "relative",
-                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", // Optional: Add a shadow for depth
-                  }}
-                  onMouseMove={handleMouseMove}
-                  onMouseLeave={handleMouseLeave}>
-                  <img
-                    src="https://www.bim.mx/wp-content/uploads/2023/09/tipos-de-inversionistas-scaled.webp"
-                    className="card-image"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      opacity: "0.8",
-                      transition: "opacity 0.3s ease",
-                    }}
-                    alt="Your Image"
-                  />
-                </div>
-              </RsuiteCol>
-            </RsuiteRow>
-          </div>
         </Row>
       </div>
     </MYNAVBAR>
