@@ -1,0 +1,44 @@
+/* Estilos generales */
+.business-model-canvas {
+    font-family: Arial, sans-serif;
+    color: #25fff1;
+  }
+  
+  /* Estilos para las secciones del canvas */
+  .canvas-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para cada columna del canvas */
+  .canvas-column {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  /* Estilos para los títulos de sección */
+  .canvas-column h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para las listas de elementos */
+  .canvas-column ul {
+    padding: 0;
+  }
+  
+  /* Estilos para cada elemento de la lista */
+  .canvas-column ul li {
+    margin-bottom: 8px;
+  }
+  
+  /* Estilos para los puntos de la lista */
+  .canvas-column ul li::before {
+    content: "•";
+    color: #1db954;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
