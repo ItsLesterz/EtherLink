@@ -27,7 +27,7 @@ import FRONTPAGE from "../components/frontPage/index.js";
 
 import LISTAEMPRENDEDORES from "../components/listaEmprendores/index.js";
 import ACTUALEMPRENDEDOR from "../components/actualEmprendedor/index.js";
-
+import Contact from "../components/contact/contact.jsx";
 import LISTAINVERSIONISTAS from "../components/listaInversionistas/index.js";
 import ACTUALINVERSIONISTA from "../components/actualInversionista/index.js";
 
@@ -36,6 +36,7 @@ import MYPROFILE from "../components/MyProfile/index.js";
 
 import MYPROYECTPROFILE from "../components/MyProyectProfile/index.js";
 
+import BusinessCanvas from "../components/businessCanva/businessCanva.jsx";
 function App() {
   return (
     <Container>
@@ -45,9 +46,9 @@ function App() {
             <Route path="/home" element={<FRONTPAGE />} />
             <Route path="/" element={<LISTAEMPRENDEDORES />} />
             <Route path="/frontPage" element={<FRONTPAGE />} />
-
+            <Route path="/contact" element={<Contact />} />
             <Route path="/inversionistas" element={<LISTAINVERSIONISTAS />} />
-
+            <Route path="/business" element={<BusinessCanvas />} />
             <Route path="/emprendedores" element={<LISTAEMPRENDEDORES />} />
             <Route path="/profile/tesla" element={<OTHERSPROFILE />} />
             <Route path="/profile" element={<MYPROFILE />} />

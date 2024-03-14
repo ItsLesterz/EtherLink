@@ -1,0 +1,16 @@
+.card {
+    background-color: #ffffff; /* Color de fondo claro predeterminado */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra predeterminada */
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  /* Estilos para el modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    .card {
+      background-color: #333333; /* Color de fondo oscuro */
+      color: #ffffff; /* Color de texto blanco */
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Sombra en modo oscuro */
+    }
+  }
